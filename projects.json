@@ -1,0 +1,42 @@
+{
+  "showreel": "showreel.mp4",
+  "showreelPoster": "",
+  "projects": [
+    {
+      "file": "more-projects.mp4",
+      "title": "",
+      "category": "",
+      "description": "",
+      "software": [],
+      "thumbnail": "",
+      "year": ""
+    },
+    {
+      "file": "project-01.mp4",
+      "title": "",
+      "category": "",
+      "description": "",
+      "software": [],
+      "thumbnail": "",
+      "year": ""
+    },
+    {
+      "file": "project-02.mp4",
+      "title": "",
+      "category": "",
+      "description": "",
+      "software": [],
+      "thumbnail": "",
+      "year": ""
+    },
+    {
+      "file": "project-03.mp4",
+      "title": "",
+      "category": "",
+      "description": "",
+      "software": [],
+      "thumbnail": "",
+      "year": ""
+    }
+  ]
+}

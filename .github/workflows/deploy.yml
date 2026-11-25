@@ -1,0 +1,49 @@
+# Deploys the portfolio to GitHub Pages on every push to "main".
+# The project manifest (projects.json) is regenerated automatically
+# from assets/videos/ before publishing — so you can simply upload a new
+# video and the site updates itself.
+#
+# One-time setup: repo Settings → Pages → Build and deployment →
+#                 Source: "GitHub Actions"
+
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Generate projects.json from assets/videos
+        run: node scripts/generate-manifest.js
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

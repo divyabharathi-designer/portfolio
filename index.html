@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divyabharathi R — Motion Graphics Designer</title>
+  <meta name="description" content="Divyabharathi R — Motion Graphics Designer specialising in 2D motion graphics." />
+  <meta name="theme-color" content="#F7F6F2" />
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Divyabharathi R — Motion Graphics Designer" />
+  <meta property="og:description" content="2D motion graphics, logo animation, kinetic typography and explainer videos." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23202020'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23D98258'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Enables entrance animations only when JS runs and the visitor allows motion -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      if (!window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("motion");
+      // Safety net: never leave content hidden if animations fail to start
+      setTimeout(function () { d.classList.add("anim-fallback"); }, 3500);
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== NAVIGATION ============================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#home" class="nav__brand" aria-label="Home">
+        <span class="nav__brand-mark" aria-hidden="true"></span>
+        <span data-config="brand">Divyabharathi</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#home" class="nav__link" data-section="home">Home</a>
+        <a href="#work" class="nav__link" data-section="work">Work</a>
+        <a href="#about" class="nav__link" data-section="about">About</a>
+        <a href="#contact" class="nav__link" data-section="contact">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="#home"><span>01</span>Home</a>
+      <a href="#work"><span>02</span>Work</a>
+      <a href="#about"><span>03</span>About</a>
+      <a href="#contact"><span>04</span>Contact</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a data-link="email" href="#"></a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ================================ HERO ================================ -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <div class="container">
+        <div class="hero__meta" data-hero>
+          <span class="hero__meta-item"><span class="pulse-dot" aria-hidden="true"></span><span data-config="title">Motion Graphics Designer</span></span>
+          <span class="hero__meta-item hero__meta-item--mid"><span data-config="specialization">2D Motion Graphics</span> · <span data-config="experience">2-3 Years</span></span>
+          <span class="hero__meta-item hero__meta-item--end" data-config="availability"></span>
+        </div>
+
+        <h1 class="hero__title" id="heroTitle" aria-label="Divyabharathi R">
+          <!-- filled from config.js -->
+        </h1>
+
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="hero__role" data-hero data-config="tagline">Ideas Made to Move.</p>
+            <p class="hero__statement" data-hero data-config="heroStatement">Transforming ideas into engaging visual experiences through motion and design.</p>
+            <div class="hero__actions" data-hero>
+              <a href="#work" class="btn btn--primary">
+                <span>View My Work</span>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+              <a href="#contact" class="btn btn--ghost"><span>Contact Me</span></a>
+            </div>
+          </div>
+
+          <!-- Minimal motion element: an animation "graph editor" -->
+          <figure class="hero__visual" data-hero aria-hidden="true">
+            <div class="graph">
+              <div class="graph__head">
+                <span>Speed Graph</span>
+                <span class="graph__ease">ease-in-out</span>
+              </div>
+              <svg class="graph__svg" viewBox="0 0 480 280" preserveAspectRatio="xMidYMid meet">
+                <g class="graph__grid">
+                  <line x1="40" y1="40" x2="440" y2="40" /><line x1="40" y1="105" x2="440" y2="105" />
+                  <line x1="40" y1="170" x2="440" y2="170" /><line x1="40" y1="235" x2="440" y2="235" />
+                  <line x1="140" y1="30" x2="140" y2="245" /><line x1="240" y1="30" x2="240" y2="245" />
+                  <line x1="340" y1="30" x2="340" y2="245" />
+                </g>
+                <line class="graph__handle" x1="40" y1="235" x2="210" y2="235" />
+                <line class="graph__handle" x1="440" y1="40" x2="270" y2="40" />
+                <circle class="graph__handle-dot" cx="210" cy="235" r="4" />
+                <circle class="graph__handle-dot" cx="270" cy="40" r="4" />
+                <path class="graph__curve" id="graphCurve" d="M40 235 C210 235 270 40 440 40" />
+                <g transform="rotate(45 40 235)"><rect class="graph__key" x="34" y="229" width="12" height="12" /></g>
+                <g transform="rotate(45 440 40)"><rect class="graph__key" x="434" y="34" width="12" height="12" /></g>
+                <line class="graph__playhead" id="graphPlayhead" x1="240" y1="24" x2="240" y2="250" />
+                <circle class="graph__dot" id="graphDot" cx="240" cy="137" r="7" />
+              </svg>
+              <div class="graph__track">
+                <span class="graph__track-line"></span>
+                <span class="graph__track-dot" id="graphTrackDot"></span>
+              </div>
+              <div class="graph__foot">
+                <span id="graphTimecode">00:00:00:00</span>
+                <span>24 fps</span>
+              </div>
+            </div>
+          </figure>
+        </div>
+
+        <a href="#showreel" class="hero__scroll" data-hero aria-label="Scroll to showreel">
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+          <span>Scroll</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================== SHOWREEL ============================== -->
+    <section class="showreel section" id="showreel" aria-labelledby="showreelTitle" hidden>
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <span class="section-index">(01)</span>
+            <h2 class="section-title" id="showreelTitle"><span data-config="showreelTitle">Showreel</span> <span class="section-title__muted" data-config="showreelYear"></span></h2>
+          </div>
+          <span class="showreel__hint">Muted by default — tap the speaker for sound</span>
+        </div>
+
+        <div class="reel" id="reel" data-reveal>
+          <div class="reel__poster" id="reelPoster" aria-hidden="true">
+            <span class="reel__poster-mark"></span>
+          </div>
+          <video class="reel__video" id="reelVideo" muted loop playsinline preload="none" aria-label="Showreel video"></video>
+
+          <div class="reel__controls">
+            <button class="reel__btn" id="reelPlay" type="button" aria-label="Pause showreel">
+              <svg class="icon icon--pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+              <svg class="icon icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+            </button>
+            <button class="reel__btn" id="reelSound" type="button" aria-label="Turn sound on" aria-pressed="false">
+              <svg class="icon icon--muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+              <svg class="icon icon--sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+            </button>
+            <div class="reel__progress" aria-hidden="true"><span id="reelProgress"></span></div>
+            <button class="reel__btn reel__btn--text" id="reelFull" type="button" aria-label="Watch showreel fullscreen">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== RIBBON ============================== -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon__track" id="ribbonTrack"></div>
+    </div>
+
+    <!-- ============================ SELECTED WORK ============================ -->
+    <section class="work section" id="work" aria-labelledby="workTitle">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <span class="section-index">(02)</span>
+            <h2 class="section-title" id="workTitle">Selected Work <sup class="section-count" id="projectCount"></sup></h2>
+          </div>
+          <p class="section-lead">A collection of 2D motion pieces — hover to preview, click to watch.</p>
+        </div>
+
+        <div class="projects" id="projectsGrid" aria-live="polite">
+          <!-- Project cards are generated from projects.json by js/projects.js -->
+        </div>
+
+        <div class="projects-empty" id="projectsEmpty" hidden>
+          <span class="projects-empty__mark" aria-hidden="true"></span>
+          <h3>New work is on its way.</h3>
+          <p>Projects are being prepared — in the meantime, feel free to <a href="#contact">get in touch</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== ABOUT =============================== -->
+    <section class="about section" id="about" aria-labelledby="aboutTitle">
+      <div class="container about__grid">
+        <div class="about__media" data-reveal>
+          <div class="about__photo" id="aboutPhoto">
+            <img id="profileImg" alt="Portrait of Divyabharathi R" width="1000" height="1250" loading="lazy" decoding="async" />
+            <span class="about__initials" id="profileInitials" aria-hidden="true"></span>
+          </div>
+          <span class="about__caption" data-config="name">Divyabharathi R</span>
+        </div>
+
+        <div class="about__content">
+          <span class="section-index" data-reveal>(03) About</span>
+          <h2 class="about__intro" id="aboutTitle" data-reveal data-config="about"></h2>
+
+          <dl class="facts" data-reveal>
+            <div class="facts__item"><dt>Experience</dt><dd data-config="experience"></dd></div>
+            <div class="facts__item"><dt>Focus</dt><dd data-config="specialization"></dd></div>
+            <div class="facts__item" data-optional="location"><dt>Based in</dt><dd data-config="location"></dd></div>
+          </dl>
+
+          <div class="about__cols">
+            <div data-reveal>
+              <h3 class="eyebrow">Creative approach</h3>
+              <p data-config="approach"></p>
+            </div>
+            <div data-reveal>
+              <h3 class="eyebrow">Biography</h3>
+              <p data-config="bio"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SKILLS ============================ -->
+    <section class="skills section" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <span class="section-index">(04)</span>
+            <h2 class="section-title" id="skillsTitle">Skills &amp; Software</h2>
+          </div>
+          <p class="section-lead">The tools I use every day to design, animate and deliver.</p>
+        </div>
+
+        <ul class="tools" id="toolsList"></ul>
+
+        <div class="services" data-reveal>
+          <h3 class="eyebrow">What I create</h3>
+          <ul class="services__list" id="servicesList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PROCESS ============================ -->
+    <section class="process section" id="process" aria-labelledby="processTitle">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">(05)</span>
+          <h2 class="section-title" id="processTitle">Creative Process</h2>
+        </div>
+
+        <div class="process__line" aria-hidden="true"><span id="processProgress"></span></div>
+        <ol class="process__steps" id="processSteps"></ol>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="contact section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <span class="section-index" data-reveal>(06) Contact</span>
+        <h2 class="contact__title" id="contactTitle">
+          <span class="line"><span>Have an idea?</span></span>
+          <span class="line"><span class="accent">Let's bring it to life.</span></span>
+        </h2>
+
+        <div class="contact__grid">
+          <div class="contact__email" data-reveal>
+            <span class="eyebrow">Write to me</span>
+            <div class="contact__email-row">
+              <a class="contact__email-link" data-link="email" href="#"></a>
+              <button class="copy-btn" id="copyEmail" type="button" aria-label="Copy email address">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+                <span class="copy-btn__label">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="contact__side" data-reveal>
+            <span class="eyebrow">Elsewhere</span>
+            <ul class="socials" id="socialsList"></ul>
+            <a class="btn btn--primary resume-btn" id="resumeBtn" href="#" download hidden>
+              <span>Download Resume</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer container">
+        <span>© <span id="year"></span> <span data-config="name"></span></span>
+        <span class="footer__tagline" data-config="tagline"></span>
+        <a href="#home" class="footer__top">Back to top ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ============================ PROJECT MODAL ============================ -->
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <div class="modal__bar">
+        <span class="modal__counter" id="modalCounter"></span>
+        <div class="modal__nav">
+          <button class="icon-btn" id="modalPrev" type="button" aria-label="Previous project">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="icon-btn" id="modalNext" type="button" aria-label="Next project">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="icon-btn icon-btn--close" type="button" aria-label="Close project" data-close>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal__media">
+        <video class="modal__video" id="modalVideo" controls playsinline preload="none"></video>
+      </div>
+
+      <div class="modal__info">
+        <div>
+          <span class="modal__category" id="modalCategory"></span>
+          <h3 class="modal__title" id="modalTitle"></h3>
+        </div>
+        <div class="modal__details">
+          <p class="modal__desc" id="modalDesc"></p>
+          <dl class="modal__meta">
+            <div><dt>Category</dt><dd id="modalCategoryMeta"></dd></div>
+            <div><dt>Software</dt><dd><ul class="chips" id="modalSoftware"></ul></dd></div>
+            <div id="modalYearWrap" hidden><dt>Year</dt><dd id="modalYear"></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: GSAP is bundled locally so the site works without any CDN -->
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>
