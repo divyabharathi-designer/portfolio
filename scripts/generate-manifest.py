@@ -13,6 +13,7 @@ Scans assets/videos/ and writes projects.json:
     picked up automatically
 No dependencies — Python 3.6+.
 """
+import hashlib
 import json
 import os
 import re
@@ -44,6 +45,17 @@ def base(f):
 
 def natural_key(s):
     return [int(t) if t.isdigit() else t.lower() for t in re.split(r"(\d+)", s)]
+
+
+def version_of(path):
+    """Short content hash: changes only when the file itself changes (cache-busting)."""
+    if not os.path.isfile(path):
+        return ""
+    h = hashlib.sha1()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()[:10]
 
 
 def find_thumb(name, thumbs):
@@ -99,6 +111,7 @@ def main():
         for k, v in p.items():
             if k not in entry:
                 entry[k] = v
+        entry["version"] = version_of(os.path.join(VIDEO_DIR, p["file"]))
         if not entry["thumbnail"]:
             entry["thumbnail"] = find_thumb(p["file"], thumbs)
         elif entry["thumbnail"] not in thumbs:
@@ -109,7 +122,12 @@ def main():
     if poster not in thumbs:
         poster = find_thumb("showreel", thumbs)
 
-    manifest = {"showreel": showreel, "showreelPoster": poster, "projects": projects}
+    manifest = {
+        "showreel": showreel,
+        "showreelVersion": version_of(os.path.join(VIDEO_DIR, showreel)) if showreel else "",
+        "showreelPoster": poster,
+        "projects": projects,
+    }
     with open(MANIFEST, "w", encoding="utf-8") as fh:
         json.dump(manifest, fh, indent=2, ensure_ascii=False)
         fh.write("\n")

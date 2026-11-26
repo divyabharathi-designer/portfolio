@@ -18,6 +18,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const ROOT = path.resolve(__dirname, "..");
 const VIDEO_DIR = path.join(ROOT, "assets", "videos");
@@ -35,6 +36,10 @@ const listFiles = (dir) =>
 const ext = (f) => path.extname(f).toLowerCase();
 const base = (f) => path.basename(f, path.extname(f));
 const natural = (a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+
+// Short content hash: changes only when the file itself changes (cache-busting)
+const versionOf = (file) =>
+  fs.existsSync(file) ? crypto.createHash("sha1").update(fs.readFileSync(file)).digest("hex").slice(0, 10) : "";
 
 function findThumb(name, thumbs) {
   const want = base(name).toLowerCase();
@@ -84,6 +89,7 @@ function main() {
     };
     // carry over any extra custom keys
     Object.keys(p).forEach((k) => { if (!(k in entry)) entry[k] = p[k]; });
+    entry.version = versionOf(path.join(VIDEO_DIR, p.file));
     if (!entry.thumbnail) entry.thumbnail = findThumb(p.file, thumbs);
     else if (!thumbs.includes(entry.thumbnail))
       console.warn(`! Thumbnail "${entry.thumbnail}" for ${p.file} was not found in assets/thumbnails/`);
@@ -92,6 +98,7 @@ function main() {
 
   const manifest = {
     showreel,
+    showreelVersion: showreel ? versionOf(path.join(VIDEO_DIR, showreel)) : "",
     showreelPoster: (old.showreelPoster && thumbs.includes(old.showreelPoster) && old.showreelPoster) || findThumb("showreel", thumbs),
     projects
   };

@@ -127,7 +127,7 @@
         index: i,
         file: p.file,
         slug: slugOf(p.file),
-        src: fileUrl(videosPath, p.file),
+        src: fileUrl(videosPath, p.file) + (p.version ? "?v=" + encodeURIComponent(p.version) : ""),
         title: p.title || titleFromFile(p.file),
         category: p.category || cfg.defaultCategory || "Motion Design",
         description: p.description || "",
@@ -137,7 +137,7 @@
       }));
 
     return {
-      showreel: showreel ? fileUrl(videosPath, showreel) : "",
+      showreel: showreel ? fileUrl(videosPath, showreel) + (m.showreelVersion && showreel === m.showreel ? "?v=" + encodeURIComponent(m.showreelVersion) : "") : "",
       showreelPoster: m.showreelPoster ? (m.showreelPoster.includes("/") ? m.showreelPoster : fileUrl(thumbsPath, m.showreelPoster)) : "",
       projects
     };

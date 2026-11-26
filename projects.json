@@ -1,5 +1,6 @@
 {
   "showreel": "showreel.mp4",
+  "showreelVersion": "caf7e5cb6b",
   "showreelPoster": "",
   "projects": [
     {
@@ -9,7 +10,8 @@
       "description": "",
       "software": [],
       "thumbnail": "",
-      "year": ""
+      "year": "",
+      "version": "bc3d02ad36"
     },
     {
       "file": "project-01.mp4",
@@ -18,7 +20,8 @@
       "description": "",
       "software": [],
       "thumbnail": "",
-      "year": ""
+      "year": "",
+      "version": "853b15621a"
     },
     {
       "file": "project-03.mp4",
@@ -27,7 +30,8 @@
       "description": "",
       "software": [],
       "thumbnail": "",
-      "year": ""
+      "year": "",
+      "version": "865463a654"
     },
     {
       "file": "project-04.mp4",
@@ -36,7 +40,8 @@
       "description": "",
       "software": [],
       "thumbnail": "",
-      "year": ""
+      "year": "",
+      "version": "98606802f2"
     },
     {
       "file": "project-05.mp4",
@@ -45,7 +50,8 @@
       "description": "",
       "software": [],
       "thumbnail": "",
-      "year": ""
+      "year": "",
+      "version": "4b5a57ce60"
     }
   ]
 }

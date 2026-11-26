@@ -109,6 +109,7 @@ Edit `projects.json`. Empty fields fall back to sensible defaults:
 
 - **Order on the website = order in this file.** Move entries up or down to re-order. The script keeps your order.
 - A plain string such as `"product-promo.mp4"` is also allowed.
+- `version` is filled in by the script (a short fingerprint of the video file). When you replace a video but keep the same file name, the fingerprint changes, so visitors' browsers fetch the new file instead of a cached old one.
 
 ### Optional: thumbnails and showreel poster
 
